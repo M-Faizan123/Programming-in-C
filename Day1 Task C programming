@@ -1,0 +1,343 @@
+
+Q1a  /*SWAP TWO VARIABLES WITHOUT USING 3rd VARIABLE*/
+
+#include<stdio.h>
+void main()
+{
+	int a,b;
+	a=2;
+	b=3;
+	printf("%d %d",a,b);
+	a=a+b;
+	b=a-b;
+	a=a-b;
+	printf("%d %d",a,b);
+getch();
+return 0;
+}
+
+-------------------------------------------------------------------------------
+Q1b /*SWAP TWO VARIABLES WITHOUT USING 3rd VARIABLE*/ X-OR operator
+
+#include<stdio.h>
+void main()
+{
+	int a,b;
+	a=2;
+	b=3;
+	printf("%d %d",a,b);
+	a=a^b;
+	b=a^b;
+	a=a^b;
+	printf("%d %d",a,b);
+getch();
+return 0;
+}
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q2 /*ACCEPT THREE NUMBERS FROM USER AND FIND OUT THE HIGHEST NUMBER*/
+
+#include<stdio.h>
+int main()
+{
+	int a,b,c;
+	a=10;
+	b=8;
+	c=12;
+	if (a>b && a>c)
+		printf ("%d", a);
+	else if (b>c)
+		printf ("%d", b);
+	else
+		printf ("%d",c);
+	getch ();
+	return 0;
+}
+
+-------------------------------------------------------------------------------
+Q2b /*ACCEPT THREE NUMBERS FROM USER AND FIND OUT THE HIGHEST NUMBER*/
+
+#include<stdio.h>
+int main()
+{
+	int a,b,c;
+	a=15;
+	b=8;
+	c=12;
+	if (a>b)
+	{
+		if(a>c)
+			printf ("%d",a);
+		else
+			printf("%d",c);
+	}
+	else
+	{
+		if (b>c)
+			printf ("%d",b);
+		else
+			printf("%d",c);
+	}
+	getch ();
+	return 0;
+}
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q2c /*THREE NUMBER FROM USER AND PRINT HIGHEST NUMBER*/
+
+
+#include <stdio.h>
+
+int main()
+{
+	int a,b,c;
+	printf("enter values");
+
+	scanf("%d %d %d" ,&a,&b,&c);
+	if(a>b)
+	{
+		if (a>c)
+			printf("%d",a);
+		else
+			printf("%d",c);
+	}
+	else
+	{
+		if (b>c)
+			printf("%d",b);
+		else
+			printf("%d",c);
+	}
+	getch();
+		return 0;
+}
+
+-------------------------------------------------------------------------------
+Q2d /*THREE NUMBER FROM USER AND PRINT HIGHEST NUMBER*/ BY MAKING IT COMPLEX
+
+
+#include <stdio.h>
+
+int main()
+{
+	int a,b,c;
+	printf("enter values\n");
+
+	scanf("%d %d %d" ,&a,&b,&c);
+	{
+	if(a>b)
+		b=a;
+	if(c>b)
+		b=c;
+	printf ("%d", b);
+		}
+	getch();
+		return 0;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q3 /*ACCEPT A YEAR FROM USER AND CHECK IF IT IS A LEAP YEAR OR NOT*/
+
+#include<stdio.h>
+void main()
+{
+	int y;
+	int flag=0;
+	printf ("\n Enter year:");
+	scanf ("%d",&y);
+	if (y%4==0 && y%100!=0 || y%400==0)
+		printf ("\nYear %d is a leap year", y);
+	else
+		printf ("\nYear %d is not a leap year",y);
+	getch();
+	return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q4 /*ACCEPT A CHARACTER FROM USER AND REVERSE THE CASE*/
+#include <stdio.h>
+
+int main()
+{
+	char ch;
+	printf("Enter an Alphabate:");
+	scanf ("%c" , &ch);
+	if (ch>=65 && ch<=90)
+		{
+			ch=ch+32;
+	printf("Reversed case of entered alphabate is %c",ch);
+	return 0;
+	}
+	else if (ch>=97 && ch<=122)
+	{	
+		ch=ch-32;
+	printf("Reversed case of entered alphabate is %c",ch);
+	return 0;
+	}
+	else 
+		printf("You have not entered a valid character");
+	printf(ch);
+	getch();
+		return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q5 /*ACCEPT A CHARACTER FROM USER AND CHECK IF IT IS A VOWEL OR NOT*/ ##PENDING##
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	char ch;
+	clrscr();
+	printf ("Enter a Character:");
+	scanf("%c" ,&ch);
+	(ch==65||ch==97||ch==69||ch==101||ch==73||ch==105||ch==79||ch==111||ch==85||ch==117);
+	printf("Character is Vowel");
+	printf("Character is Not Vowel");
+	getch;
+}
+if (ch==65||ch==97||ch==69||ch==101||ch==73||ch==105||ch==79||ch==111||ch==85||ch==117)
+	printf("Character is Vowel");
+else printf("Character is Not Vowel");
+	getch;
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q6 /*ACCEPT MARKS FROM USER AND PRINT GRADE*/
+
+
+#include <stdio.h>
+
+int main()
+{
+	int no;
+	printf("enter marks\n");
+
+	scanf("%d" ,&no);
+
+	{
+	if(no>=75)
+	printf ("Grade A");
+
+	else if(no>=55 && no<75)
+	printf ("Grade B");
+
+	else if(no>=35 && no<55)
+	printf ("Grade C");
+
+	else
+	printf ("FAIL");
+		}
+	getch();
+		return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@@ /*ACCEPT A NUMBER FROM USER AND DO THE MOD (%) BY 2 AND PRINT REMAINDER*/
+
+#include <stdio.h>
+
+int main()
+{
+	int no,c;
+	printf("enter a number\n");
+
+	scanf("%d" ,&no);
+	{
+	c=no%2;
+	printf("%d", c);
+		}
+	getch();
+		return 0;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q9 /*ACCEPT A NUMBER FROM USER AND CHECK IF IT IS EVEN OR NOT*/ WITH MOD(%)
+
+#include <stdio.h>
+
+int main()
+{
+	int no,c;
+	printf("enter a number\n");
+
+	scanf("%d" ,&no);
+	{
+	if (no%2==0)
+	printf ("Number is even");
+	else
+printf ("Number is odd");
+			}
+	getch();
+		return 0;
+}
+
+-------------------------------------------------------------------------------
+Q9b /*ACCEPT A NUMBER FROM USER AND CHECK IF IT IS EVEN OR NOT*/ WITHOUT MOD OPERATOR
+
+#include <stdio.h>
+
+int main()
+{
+	int no,	q;
+	printf("enter a number\n");
+	scanf("%d" ,&no);
+	q=no/2;
+		if (q*2==no)
+printf("Number is EVEN");
+		else
+			printf("Number is ODD");
+	getch();
+		return 0;
+}
+
+-------------------------------------------------------------------------------
+Q9c /*ACCEPT A NUMBER FROM USER AND CHECK IF IT IS EVEN OR NOT */ BIT WISE (&) OPERATOR
+
+#include <stdio.h>
+
+int main()
+{
+	int no,	q;
+	printf("enter a number\n");
+	scanf("%d" ,&no);
+	q=no&1;
+		if (q==0)
+printf("Number is EVEN");
+		else
+			printf("Number is ODD");
+	getch();
+		return 0;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q7/*ACCEPT A NUMBER FROM USER AND IF IT IS DIVISIBLE BY 3, PRINT FUN. IF IT IS DIVISIBLE BY 7, PRINT BUZZ. IF IT IS DIVISIBLE BY 3 & 7 BOTH, PRINT FUN BUZZ*/
+
+#include <stdio.h>
+
+int main()
+{
+	int no;
+	printf("enter number");
+	scanf ("%d" , &no);
+	if (no%3==0)
+		printf ("FUN");
+		if (no%7==0)
+			printf ("BUZZ");
+	getch();
+		return 0;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
