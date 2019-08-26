@@ -1,0 +1,512 @@
+
+Q1 /*Accept 10 number user and do sum of it.(do not use array)*/
+
+#include<stdio.h>
+
+int main()
+{
+int no, sum= 0,i;
+
+printf("Enter numbers 10 times: ");
+for(i=1;i<11;i++)
+{
+	scanf("%d",&no);
+	sum=sum+no;
+
+}
+printf("sum is %d",sum);
+getch();
+return 0;
+}
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q1 /*Accept 10 number user and do sum of it.(do not use array)*/
+
+#include<stdio.h>
+
+int main()
+{
+int no, sum= 0,i;
+
+printf("Enter numbers 10 times: ");
+for(i=1;i<11;i++)
+{
+	scanf("%d",&no);
+	sum=sum+no;
+
+}
+printf("sum is %d",sum);
+getch();
+return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q2 /*Accept a number from user and find a factorial of a number*/ 
+
+
+#include<stdio.h>
+int fact (int);
+int main()
+{
+	int no, r;
+	printf ("Enter Number");
+	scanf("%d", &no);
+	r=fact(no);
+	printf ("%d", r);
+	getch();
+	return 0;
+}
+int fact (int no)
+{
+	int f, i;
+	f=1;
+		for(i=2; i<=no; i++)
+			f=f*i;
+	return f;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q3 /*Accept 10 number from user count how many are positive ,negative , zero*/
+
+#include<stdio.h>
+
+int main()
+{
+	int no,p=0,n=0,z=0,i;
+
+	printf("Enter 10 numbers ");
+	for(i=1;i<11;i++)
+{
+	scanf("%d",&no);
+	if (no>0)
+		p++;
+	else if (no<0)
+		n++;
+	else z++;
+
+}
+	printf("Positive numbers %d \n",p);
+	printf("Negative numbers %d \n",n);
+	printf("Zero count equals %d \n",z);
+
+	getch();
+	return 0;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q4 /*Accept a number from user and do sum of digit*/ 
+
+#include<stdio.h>
+int sumdigit(int);
+int main()
+{
+	int no, r;
+	printf ("Enter a Number");
+scanf ("%d", &no);
+	r=sumdigit(no);
+printf("%d", r);
+getch ();
+return 0;
+}
+int sumdigit(int no)
+{
+	int r, sum=0;
+	while (no!=0)
+	{
+		r=no%10;
+		sum=sum+r;
+		no=no/10;
+	}
+	return sum;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q5 /*Accept a number from user and reverse it.*/ 
+
+#include <stdio.h>
+int revno(int);
+
+int main()
+	{
+		int no, r;
+		printf("Enter a number");
+		scanf("%d",&no);
+		r = revno(no);
+		printf("%d",r);
+		getch();
+		return 0;
+
+	}
+
+int revno(int n)
+{
+	int rev = 0, r;
+		while(n!=0)
+		{
+		r=n%10;
+		rev= rev*10+r;
+		n=n/10;
+		}
+	return rev;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q6 /*Accept a number from user and check if it is palindrome number or not*/
+
+#include <stdio.h>
+int palin(int);
+
+int main()
+{
+	int no, p;
+
+	printf("Enter a number");
+	scanf("%d",&no);
+
+	p=palin(no);
+
+	if (p==0)
+		printf("Number is Palindrome");
+
+	else printf("Not a Palindrome");
+
+	getch();
+	return 0;
+
+}
+
+int palin(int n)
+	{
+		int r, rev, n2;
+		rev = 0, n2= n;
+
+		while(n!=0)
+			{
+			r=n%10;
+			rev=rev*10+r;
+			n=n/10;
+			}
+
+		if(n2 == rev)
+			return 0;
+		return 1;
+	}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q7 /*Accept a number from user and print a table of that number*/
+
+#include <stdio.h>
+int main()
+{
+	int no, i, ans;
+	printf("Enter a Number");
+	scanf("%d", &no);
+for(i=1;i<=10;i++)
+{ans=no*i;
+printf("\n%d * %d = %d", no,i,ans);
+}
+getch ();
+return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q8 /*Accept a number from user check if it is special number or not*/
+
+#include<stdio.h>
+int spcl (int);
+int main()
+{
+	int no, r;
+	printf ("Enter Number");
+	scanf("%d", &no);
+	r=spcl(no);
+	if (r==1)
+		printf("Given number is a special Number");
+	else
+		printf("Given number is not a special Number");
+	getch ();
+	return 0;
+}
+int spcl (int no)
+{
+	int r, s, sum=0;
+	r=no;
+	while (no!=0)
+	{
+		s=no%10;
+		sum=sum+fact(s);
+		no=no/10;
+	}
+	if (sum==r)
+		return 1;
+	return 0;
+}
+int fact (int no)
+{
+	int f, i;
+	f=1;
+		for(i=2; i<=no; i++)
+			f=f*i;
+	return f;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q9 /*Accept a number from user and check if it is armstrong number or not*/
+
+#include <stdio.h>
+
+int main()
+	{
+		int no,r;
+
+		printf("Enter a number: ");
+		scanf("%d",&no);
+
+		r=armstrong(no);
+
+		if (r == 1)
+			printf("Given number is Armstrong number");
+		else printf("Given number is not a Armstrong number");
+
+		getch();
+		return 0;
+
+	}
+
+
+int armstrong(int no)
+	{
+		int r,a,sum=0;
+		a = no;
+
+		while(a!=0)
+		{
+			r=a%10;
+			sum=sum + cube(r);
+			a=a/10;
+		}
+		if (no == sum)
+			return 1;
+		return 0;
+
+	}
+
+int cube(int x)
+{
+	return x*x*x;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q10 /*Go on accepting number from user till user enter 0 and do sum of it.**/
+
+#include<stdio.h>
+
+int main()
+{
+int no=1, sum= 0,i;
+
+printf("Enter numbers ");
+
+ while(no!=0)
+{
+	scanf("%d",&no);
+	sum=sum+no;
+
+}
+printf("sum is %d",sum);
+getch();
+return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q11 /*Accept a number from user and print next 5 numbers. */
+
+#include<stdio.h>
+
+int main()
+{
+	int no,i;
+	printf("Enter a number ");
+	scanf("%d",&no);
+
+	for(i=1;i<=5;i++)
+		{
+			printf("%d ",no+i);
+		}
+
+		getch();
+		return 0;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q12 /*Accept a number from user and print that many numbers after the number.*/
+
+#include<stdio.h>
+
+int main()
+{
+	int no,i;
+	printf("Enter a number ");
+	scanf("%d",&no);
+
+	for(i=1;i<=no;i++)
+		{
+			printf("%d ",no+i);
+		}
+
+		getch();
+		return 0;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q15 /*Accept term from user and print Fibonacci series**/
+
+#include<stdio.h>
+int fibbo(int);
+
+int main()
+ {
+	int n;
+	printf("Enter number ");
+	scanf("%d", &n);
+	
+	printf("%d",fibbo(n));
+	
+	getch();
+	return 0;
+}
+
+int fibbo(int no)
+{
+	int a=0,b=1,c,i;
+	if(no == 0)
+		return no;
+	for(i=2;i<=no;i++)
+	{
+	c=a+b;
+	a=b;
+	b=c;
+	}
+	return b;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q18 /*Accept 10 number from user and print highest number**/
+
+#include<stdio.h>
+
+int main()
+{
+	int no,i,b;
+	printf("Enter numbers 10 times: ");
+	scanf("%d",&no);
+	b=no;
+	for(i=1;i<10;i++)
+		{
+			scanf("%d",&no);
+			{
+				if(no>b)
+				b=no;
+			}
+		}
+		printf("Highest number is %d",b);
+
+		getch();
+		return 0;
+}
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Q19 /*Accept 10 number from user and print lowest number.**/
+
+#include<stdio.h>
+
+int main()
+{
+	int no,i,b;
+	printf("Enter numbers 10 times: ");
+	scanf("%d",&no);
+	b=no;
+	for(i=1;i<10;i++)
+		{
+			scanf("%d",&no);
+			{
+				if(no<b)
+				b=no;
+			}
+		}
+		printf("lowest number is %d",b);
+
+		getch();
+		return 0;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q20/*Accept 10 number from user and print highest and 2nd highest number.**/
+
+#include<stdio.h>
+void main()
+ {
+	int i,nmax,max,no,t;
+	int n=0;
+	printf("enter  5 no");
+	scanf("%d",&max);
+	scanf("%d",&nmax);
+//swap
+  if(max<nmax)
+	 {  t=max;
+		max=nmax;
+		nmax=t;
+	 }
+
+ for(i=2;i<5;i++)
+	 {
+	   scanf("%d",&no);
+		if(max<no)
+		{  nmax=max;
+		   max=no;
+		}
+		else
+		{   if(nmax<no)
+				nmax=no;	
+		}
+	}
+		printf("%d %d",max,nmax); 
+		getch();
+		return 0;
+ }
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Q21 /*Write a prog to print every integer between 1 and n divisible by m. also report whether the number that is divisible by m is even or odd.*/
+
+#include<stdio.h>
+int main()
+ {
+	int n,m,i;
+	printf("Enter n & m Also m<n\n");
+	scanf("%d %d", &n, &m);
+	if (m>n)
+		printf("m should be <n");
+	else
+	{
+		for(i=m;i<=n;i++)
+		{if(i%m==0)
+		{
+			if(i%2==0)
+				printf ("\n %d is even\n", i);
+			else
+				printf("\n %d is odd\n", i);
+		}
+		}
+	}
+			getch();
+		return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
