@@ -1,0 +1,164 @@
+CREATE TABLE TextDataTypes
+(
+  A char(10),
+  B varchar(10),
+  c Text
+);
+
+INSERT INTO TextDataTypes
+  VALUES
+('abcdef', '123', 'Text data - larger strings are accepted here'),
+
+('abcdef', 'abcdef', 'Text data - larger strings are accepted here');
+
+CREATE TABLE NumDatatypes
+(
+	A tinyint,
+	B smallint,
+	C mediumint,
+	D int,
+	E bigint,
+	F decimal(8, 2),
+	G double(8,2),
+	H float
+);
+
+INSERT INTO NumDatatypes VALUES
+(13, 130, 33456, 333456, 33333456,
+999999.99, 999999.99, 999999.99);
+
+INSERT INTO NumDatatypes VALUES
+(110, 234, 3345, 33345, 3333345,
+999999.9, 999999.99, 999999.99);
+
+CREATE TABLE DateDataTypes
+(
+	A date,
+	B datetime,
+	C timestamp,
+	D time
+);
+
+INSERT INTO DateDataTypes VALUES
+(Current_date(), now(), now(),
+now());
+
+INSERT INTO DateDataTypes VALUES
+('2019-12-26', 
+ '2019-08-26 10:30:23', 
+ '20190826103023',
+ '10:30:23'
+);
+
+SELECT *
+  FROM DateDataTypes;
+
+CREATE TABLE SplDataTypes
+(
+  ID int AUTO_INCREMENT 
+  primary key,
+  Membership ENUM('Silver',
+  'Gold', 'Platinum'),
+  Hobbies SET('Swimming',
+  'Sking', 'Cricket', 
+  'Football')
+);
+
+INSERT INTO SplDataTypes
+(Membership, Hobbies)
+ VALUES
+('Silver', 
+ 'Sking,bowling'
+);
+
+
+INSERT INTO SplDataTypes
+(Membership, Hobbies)
+ VALUES
+('Silver', 
+'bowling');
+
+SELECT *
+  FROM SplDataTypes;
+
+-- Sorting data.
+ORDER BY.
+
+SELECT *
+  FROM ProductCategory;
+
+-- Sort data by category name in asc order.
+SELECT *
+  FROM ProductCategory
+  ORDER BY Name ASC;
+
+SELECT *
+  FROM ProductCategory
+  ORDER BY Name;
+
+-- Sort data by category name in descorder.
+
+SELECT *
+  FROM ProductCategory
+  ORDER BY Name DESC;
+
+SELECT *
+  FROM ProductCategory
+  ORDER BY ProductCategoryID DESC;
+
+SELECT ProductCategoryID AS ID,
+       Name
+  FROM ProductCategory
+  ORDER BY ProductCategoryID DESC;
+
+
+SELECT ProductCategoryID AS CatID,
+       Name
+  FROM ProductCategory
+  ORDER BY CatID DESC;
+
+
+SELECT *
+  FROM ProductSubcategory;
+
+-- Sort data by productcategoryid
+SELECT *
+  FROM ProductSubcategory
+  ORDER BY ProductCategoryID;
+
+SELECT *
+  FROM ProductSubcategory
+  ORDER BY ProductCategoryID DESC,
+  Name ASC;
+
+
+SELECT *
+  FROM ProductSubcategory
+  ORDER BY ProductCategoryID DESC,
+  Name DESC;
+
+SELECT ProductSubcategoryID, 
+       Name,
+       ProductCategoryID 
+  FROM ProductSubcategory
+  ORDER BY 2;
+
+SELECT ProductSubcategoryID, 
+       ProductCategoryID,
+       Name
+  FROM ProductSubcategory
+  ORDER BY 2;
+
+SELECT ProductSubcategoryID, 
+       Name,
+       ProductCategoryID 
+  FROM ProductSubcategory
+  ORDER BY 2
+  LIMIT 10;
+
+SELECT ProductSubcategoryID, 
+       Name,
+       ProductCategoryID 
+  FROM ProductSubcategory
+  ORDER BY 2
+  LIMIT 20, 10;
